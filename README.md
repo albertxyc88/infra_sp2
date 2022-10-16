@@ -35,6 +35,7 @@ Python 3.7, Django 2.2, DRF 3.12, JWT 2.1.0, gunicorn 20.0.4, nginx, PostgreSQL.
 В папке nginx в файле конфигурации default.conf указать ip адрес вашего веб сервера.
 
 `server_name = 127.0.0.1`
+
 Далее запустите контейнеры с помощью 'docker-compose':
 
 `docker-compose up -d`
@@ -50,6 +51,10 @@ Python 3.7, Django 2.2, DRF 3.12, JWT 2.1.0, gunicorn 20.0.4, nginx, PostgreSQL.
 Выполните при необходимости первичное наполение БД тестовыми данными:
 
 `cat fixtures.json |docker-compose exec -T web python manage.py loaddata --format json -`
+
+Собираем статику:
+
+`docker-compose exec web python manage.py collectstatic --no-input `
 
 Полное описание сервиса доступно по endpoint /redoc/.
 Собранный образ доступен на DockerHub albertxyc/api_yamdb
