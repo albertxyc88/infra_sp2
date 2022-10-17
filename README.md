@@ -62,4 +62,5 @@ Python 3.7, Django 2.2, DRF 3.12, JWT 2.1.0, gunicorn 20.0.4, nginx, PostgreSQL.
 `docker-compose exec web python manage.py collectstatic --no-input `
 
 Полное описание сервиса доступно по endpoint /redoc/.
+
 Собранный образ доступен на DockerHub albertxyc/api_yamdb
